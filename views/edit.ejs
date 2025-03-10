@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a post</title>
+</head>
+<body>
+    <h1>edit your post</h1>
+    <p>Post Id : <%= post.id %></p>
+    <p>Post username : @<%= post.username %></p>
+
+    <!-- as we want to delete prev content and update new one->so is done by below line chnaging post request to patch  -->
+    <form method="post" action="/posts/<%= post.id%>?_method=PATCH">
+        <textarea name="content"><%= post.content %></textarea>
+        <button>Submit</button>
+    </form>
+    
+</body>
+</html>
